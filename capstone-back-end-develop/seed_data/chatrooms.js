@@ -1,0 +1,32 @@
+module.exports = [
+  {
+    chatroomID: 1,
+    chatroomName: "My First Chatroom!",
+    person1: "",
+    person2: "",
+    person3: "",
+    person4: "",
+    person5: "",
+    person6: "",
+  },
+  {
+    chatroomID: 2,
+    chatroomName: "Also My First Chatroom!",
+    person1: "",
+    person2: "",
+    person3: "",
+    person4: "",
+    person5: "",
+    person6: "",
+  },
+  {
+    chatroomID: 3,
+    chatroomName: "The Brainstation Appreciation Chat",
+    person1: "",
+    person2: "",
+    person3: "",
+    person4: "",
+    person5: "",
+    person6: "",
+  },
+];

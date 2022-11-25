@@ -21,7 +21,7 @@ export default function App() {
   }
   );
   console.log("starting app");
-  
+
   if (!fontsLoaded) {
     return <AppLoading />;
   }
@@ -53,6 +53,8 @@ export default function App() {
   }
 
   return (
+    <>
+    <StatusBar style='light'/>
     <LinearGradient colors={[colours.primary700, colours.accent500]} style={styles.rootScreen}>
       <ImageBackground source={require('./assets/background.png')} resizeMode="cover" style={styles.rootScreen} imageStyle={styles.backgroundImage}>
         <SafeAreaView style={styles.rootScreen}>
@@ -60,6 +62,7 @@ export default function App() {
         </SafeAreaView>
       </ImageBackground>
     </LinearGradient>
+    </>
   );
 }
 

@@ -1,78 +1,26 @@
-import { View, FlatList } from "react-native";
+import { View, FlatList, StyleSheet } from "react-native";
 import ViewCard from "./ViewCard";
-
-const DUMMY_VIEWS = [
-    {
-        id: 'view1',
-        name: 'dream house',
-        minBedrooms: 4,
-        maxBedrooms: 5,
-        garden: true,
-        cost: 950000,
-        POIfilters: [
-            {
-                poiID: 'view1poi1', poi: 'school', time: 30, method: 'walk'
-            },
-            {
-                poiID: 'view1poi2', poi: 'church', time: 45, method: 'public'
-            },
-            {
-                poiID: 'view1poi3', poi: 'SE5 2XS', time: 45, method: 'drive'
-            }
-        ]
-    },
-    {
-        id: 'view2',
-        name: 'option B house',
-        minBedrooms: 2,
-        maxBedrooms: 3,
-        garden: false,
-        cost: 450000,
-        POIfilters: [
-            {
-                poiID: 'view2poi1', poi: 'school', time: 45, method: 'walk'
-            },
-            {
-                poiID: 'view2poi2', poi: 'church', time: 60, method: 'public'
-            },
-            {
-                poiID: 'view2poi3', poi: 'SE5 2XS', time: 60, method: 'drive'
-            }
-        ]
-    },
-    {
-        id: 'view3',
-        name: 'option C house',
-        minBedrooms: 2,
-        maxBedrooms: 2,
-        garden: false,
-        cost: 300000,
-        POIfilters: [
-            {
-                poiID: 'view3poi1', poi: 'school', time: 45, method: 'walk'
-            },
-            {
-                poiID: 'view3poi2', poi: 'church', time: 90, method: 'public'
-            },
-            {
-                poiID: 'view3poi3', poi: 'SE5 2XS', time: 90, method: 'drive'
-            }
-        ]
-    }
-];
-
+import { POIFILTERS, HOUSEVIEWS } from "../../data/dummy-data";
 
 function ViewList() {
      
     function renderViewItem(itemData) {
+        const completeView = itemData.item;
+        const filterList = [];
+
+        completeView.POIfilters.forEach(filter => {
+            let row = POIFILTERS.find(e => e.poiID === filter);
+            filterList.push(row);
+        });
+
         return (
-            <ViewCard {...itemData.item} />
+            <ViewCard filters={filterList} {...completeView} />
         )
     };
 
     return (
-        <View >
-                <FlatList data={DUMMY_VIEWS} 
+        <View style={styles.viewContainer}>
+                <FlatList data={HOUSEVIEWS} 
                 renderItem={renderViewItem} 
                 keyExtractor={(item) => item.id}/>
         </View> 
@@ -80,3 +28,9 @@ function ViewList() {
 };
 
 export default ViewList;
+
+const styles = StyleSheet.create({
+    viewContainer: {
+        margin: '1%'
+    }
+})

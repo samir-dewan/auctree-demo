@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, Pressable } from "react-native";
+import { Text, View, StyleSheet, Pressable, FlatList } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { GlobalStyles } from "../../constants/styles";
 
@@ -8,19 +8,23 @@ function ViewCard(props) {
 
     function cardPressHandler() {
         navigation.navigate('ViewDetails', {
-            viewProps: props
+            viewProps: props,
+            filters: props.filters
         });
     }
 
     return (
         <Pressable onPress={cardPressHandler}>
-            <View>
+            <View style={styles.cardContainer}>
                 <Text>
                     {props.name}
                 </Text>
                 <View>
                     <Text>
                         {props.minBedrooms} to {props.maxBedrooms} bedrooms
+                    </Text>
+                    <Text>
+                        {props.minSpend}-{props.maxSpend}
                     </Text>
                 </View>
             </View>
@@ -29,8 +33,10 @@ function ViewCard(props) {
 }
 
 const styles = StyleSheet.create({
-    viewContainer: {
-        borderColor: GlobalStyles.colors.gray500,
+    cardContainer: {
+        borderColor: GlobalStyles.colors.primary50,
+        borderWidth: 0.25,
+        margin: '0.5%',
     }
 })
 

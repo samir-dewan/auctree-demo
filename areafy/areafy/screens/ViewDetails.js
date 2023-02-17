@@ -1,5 +1,5 @@
 import { useLayoutEffect } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, StyleSheet } from 'react-native';
 import POICard from '../components/poi/POICard';
 import { GlobalStyles } from '../constants/styles';
 import Button from '../UI/Button';
@@ -8,6 +8,7 @@ import IconButton from '../UI/IconButton';
 function ViewDetails({route, navigation}) {
     const viewProps = route.params?.viewProps;
     const isEditing = !!viewProps;
+    const filters = route.params?.filters;
 
     useLayoutEffect(() => {
         navigation.setOptions({
@@ -48,15 +49,15 @@ function ViewDetails({route, navigation}) {
             </View>
             <View>
                 <Text>
-                    {viewProps.cost}
+                    {viewProps.minSpend} to {viewProps.maxSpend} spend
                 </Text>
                 <Text>
                     {viewProps.minBedrooms} to {viewProps.maxBedrooms} bedrooms
                 </Text>
             </View>
-            <View>
+            <View style={styles.POIcontainer}>
                 <FlatList 
-                data={viewProps.POIfilters}
+                data={filters}
                 renderItem={renderPOIItem}
                 keyExtractor={item => item.poiID}/>
             </View>
@@ -70,3 +71,9 @@ function ViewDetails({route, navigation}) {
 }
 
 export default ViewDetails;
+
+const styles = StyleSheet.create({
+    POIcontainer: {
+        margin: '1%'
+    }
+})

@@ -1,11 +1,12 @@
-export class HouseViews {
+export class HouseView {
     constructor (
         id,
         name,
         minBedrooms,
         maxBedrooms,
         garden,
-        cost,
+        minSpend,
+        maxSpend,
         POIfilters
     )
     {
@@ -14,7 +15,8 @@ export class HouseViews {
         this.minBedrooms = minBedrooms,
         this.maxBedrooms = maxBedrooms,
         this.garden = garden,
-        this.cost = cost,
+        this.minSpend = minSpend,
+        this.maxSpend = maxSpend,
         this.POIfilters = POIfilters
     }
 };
@@ -33,4 +35,3 @@ export class POIfilter {
         this.method = method
     }
 };
-

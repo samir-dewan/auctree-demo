@@ -95,8 +95,8 @@ export default function App() {
             })}>
               <Stack.Screen name='BottomOverview' component={BottomOverview} options={{title: "Areafy"}}/>
               <Stack.Screen name='PropertyDetails' component={PropertyDetails} options={{headerShown: false}}/>
-              <Stack.Screen name='ViewTab' component={ViewTab} options={{headerShown: false}}/>
-              <Stack.Screen name='ViewDetails' component={ViewDetails} options={{headerShown: false}}/>
+              <Stack.Screen name='ViewTab' component={ViewTab}/>
+              <Stack.Screen name='ViewDetails' component={ViewDetails}/>
             </Stack.Navigator>
           </NavigationContainer>
         </Provider>

@@ -14,7 +14,8 @@ function POICard({poiID, poi, time, method}) {
 
 const styles = StyleSheet.create({
     cardContainer: {
-        backgroundColor: GlobalStyles.colors.primary100     
+        backgroundColor: GlobalStyles.colors.primary100,
+        margin: '1%'     
     },
 })
 

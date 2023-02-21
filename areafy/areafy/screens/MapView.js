@@ -1,11 +1,10 @@
 import { View, Text } from 'react-native';
+import Map from '../components/map/map';
 
 function MapView() {
     return (
         <View>
-            <Text>
-                MapView Screen
-            </Text>
+            <Map />
         </View>
     )
 }

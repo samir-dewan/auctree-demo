@@ -1,6 +1,6 @@
 import MapView, { Marker } from 'react-native-maps';
-import { StyleSheet, View } from 'react-native';
-import { useState } from 'react';
+import { StyleSheet, View, Button, Dimensions} from 'react-native';
+import { useEffect, useState } from 'react';
 import * as Location from 'expo-location';
 
 function Map() {
@@ -11,27 +11,31 @@ function Map() {
         longitudeDelta: 0.0421,
     });
 
-    const userLocation = async() => {
-        let {status} = await Location.requestForegroundPermissionsAsync();
-        if (status !== 'granted') {
-            setErrorMsg('Permission for location denied');
-        }
-        let location = await Location.getCurrentPositionAsync({enableHighAccuracy: true});
-        setMapRegion(
-            {
-            latitude: location.coords.latitude,
-            longitude: location.coords.longitude,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421
+    useEffect(() => {
+        const fetchData = async() => {
+            let {status} = await Location.requestForegroundPermissionsAsync();
+            if (status !== 'granted') {
+                setErrorMsg('Permission for location denied');
             }
-        )
-    }
+            let location = await Location.getCurrentPositionAsync({enableHighAccuracy: true});
+            setMapRegion(
+                {
+                latitude: location.coords.latitude,
+                longitude: location.coords.longitude,
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421
+                }
+            )
+        };
+
+        fetchData().catch(console.error);
+    })
 
 
     return (
         <View style = {styles.mapContainer} >
             <MapView style = {styles.map} 
-            region = {mapRegion}>
+            initialRegion = {mapRegion}>
                 <Marker 
                     coordinate={mapRegion} title='hello' 
                 />
@@ -45,8 +49,8 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     map: {
-        width: '100%',
-        height: '100%'
+        width: Dimensions.get('window').width,
+        height: Dimensions.get('window').height,
     }
 });
 

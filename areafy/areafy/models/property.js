@@ -1,8 +1,10 @@
 class Property {
-    constructor(
+    constructor
+    (
         id,
         addressNumber,
         roadName,
+        city,
         postcode,
         price,
         estateAgent,
@@ -12,6 +14,7 @@ class Property {
         this.id = id,
         this.addressNumber = addressNumber,
         this.roadName = roadName,
+        this.city = city,
         this.postcode = postcode,
         this.price = price,
         this.estateAgent = estateAgent,

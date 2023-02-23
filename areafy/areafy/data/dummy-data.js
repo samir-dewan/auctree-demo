@@ -1,10 +1,11 @@
+import Place from '../models/place';
 import Property from '../models/property';
 import { HouseView, POIfilter } from '../models/view';
 
 export const PROPERTIES = [
-    new Property('e1', 74, 'Cavendish Road', 'SW19 2EU', 800000, 'Eddison White', new Date('2022-06-06')),
-    new Property('e2', 37, 'Devonshire Road', 'SW19 2AG', 675000, 'Eddison White', new Date('2022-04-01')),
-    new Property('e3', 16, 'Carleton Avenue', 'SM6 9LN', 1000000, 'Cromwells', new Date('2023-01-05'))
+    new Property('e1', 74, 'Cavendish Road', 'Colliers Wood', 'SW19 2EU', 800000, 'Eddison White', new Date('2022-06-06')),
+    new Property('e2', 37, 'Devonshire Road', 'Colliers Wood', 'SW19 2AG', 675000, 'Eddison White', new Date('2022-04-01')),
+    new Property('e3', 16, 'Carleton Avenue', 'Wallington', 'SM6 9LN', 1000000, 'Cromwells', new Date('2023-01-05'))
 ];
 
 export const HOUSEVIEWS = [
@@ -24,3 +25,9 @@ export const POIFILTERS = [
     new POIfilter('view3poi2', 'church', 60, 'public'),
     new POIfilter('view3poi3', 'SE5 2XS', 90, 'drive')
 ];
+
+export const PLACES = [
+    new Place('place1', 'Colliers Wood', 5),
+    new Place('place2', 'Croydon', 4),
+    new Place('place3', 'Wallington', 3)
+]

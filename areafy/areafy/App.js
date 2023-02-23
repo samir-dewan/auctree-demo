@@ -12,6 +12,7 @@ import ListView from './screens/ListView';
 import PropertyDetails from './screens/PropertyDetails';
 import ViewTab from './screens/ViewTab';
 import ViewDetails from './screens/ViewDetails';
+import PlacesScreen from './screens/PlacesScreen';
 
 import { GlobalStyles } from './constants/styles';
 import IconButton from './UI/IconButton';
@@ -74,6 +75,13 @@ function BottomOverview() {
       tabBarIcon: () => {
         <Ionicons name={'menu'} size={24} color={'white'}/>
         }}}/>
+    <BottomTabs.Screen name='PlacesScreen' component={PlacesScreen} options={{
+      title: 'Places',
+      tabBarLabel: 'Places',
+      tabBarIcon: () => {
+        <Ionicons name={'home'} size={24} color={'white'} />
+      }
+    }} />
   </BottomTabs.Navigator>
   )
 }

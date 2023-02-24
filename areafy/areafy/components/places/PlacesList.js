@@ -1,4 +1,6 @@
 import { View, FlatList } from "react-native";
+import PlacesCard from "./PlacesCard";
+import { PLACES } from "../../data/dummy-data";
 
 
 function renderPlaceItem(itemData) {

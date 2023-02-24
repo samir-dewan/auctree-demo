@@ -17,4 +17,4 @@ class Review {
     }
 };
 
-export default Place;
+export default Review;

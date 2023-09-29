@@ -1,11 +1,14 @@
-import { Typography } from "@mui/material";
+import { Typography, AppBar, CssBaseline, Container } from "@mui/material";
 
 const Header = () => {
-    return (
-        <div>
-            <Typography variant="h2">hello, world</Typography>
-        </div>
-    )
+  return (
+    <>
+        <AppBar position="relative">
+          <Typography variant="h5" gutterBottom>Logo</Typography>
+          <Typography variant="h5">Search Feature</Typography>
+        </AppBar>
+    </>
+  );
 };
 
 export default Header;

@@ -1,11 +1,13 @@
-import { Typography, AppBar, CssBaseline, Container } from "@mui/material";
+import { Typography, AppBar, CssBaseline, Container, Avatar } from "@mui/material";
+import SavedSearchIcon from "@mui/icons-material/SavedSearch";
+import AuctreeLogo from "../../images/Auctree-Logo.png";
 
 const Header = () => {
   return (
     <>
         <AppBar position="relative">
-          <Typography variant="h5" gutterBottom>Logo</Typography>
-          <Typography variant="h5">Search Feature</Typography>
+            <Avatar alt="Auctree Logo" src={AuctreeLogo} />
+            <SavedSearchIcon />
         </AppBar>
     </>
   );

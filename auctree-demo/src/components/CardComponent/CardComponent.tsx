@@ -1,10 +1,13 @@
 import { Typography, Container } from "@mui/material";
 
-const CardComponent = () => {
+interface CardType {
+  title: string,
+}
+const CardComponent = (card: CardType) => {
   return (
     <>
       <Container>
-        <Typography variant="h2">hello, world</Typography>
+        <Typography variant="h2">{card.title}</Typography>
       </Container>
     </>
   );

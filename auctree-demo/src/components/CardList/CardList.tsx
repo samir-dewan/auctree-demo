@@ -1,9 +1,21 @@
-import { Typography } from "@mui/material";
 import CardComponent from "../CardComponent/CardComponent";
 
+interface Card {
+    title: string,
+}
+
 const CardList = () => {
+
+    let cards: Card[] = [{title: "Test"}, {title: "Test"}, {title: "Test"},{title: "Test"}, {title: "Test"}]
+
     return (
-        <CardComponent />
+        <div>
+            {cards.map((card: Card) => {
+                return (
+                    <CardComponent title={card.title} />
+                )
+            })}
+        </div>
     )
 }
 

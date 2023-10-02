@@ -1,0 +1,4 @@
+.footerContainer {
+    background-color: black;
+    margin-top: max(12vmin, 64px);
+}

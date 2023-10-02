@@ -1,7 +1,7 @@
 import { Pressable, View, Text } from "react-native";
 
 function placePressHandler() {
-
+    
 };
 
 function PlacesCard({id}) {

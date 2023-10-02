@@ -10,7 +10,10 @@ function CategoriesScreen({navigation}) {
     function renderCategoryItem(itemData) {
         function pressHandler() {
             console.log('press handled');
-            navigation.navigate('MealsOverview')
+            console.log(itemData.item.id);
+            navigation.navigate('MealsOverview', {
+                categoryID: itemData.item.id,
+            });
         };
     
         console.log(itemData.item);

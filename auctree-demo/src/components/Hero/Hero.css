@@ -1,10 +1,12 @@
 .heroContainer {
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .heroImage {
     width: 100%;
-    height: auto;
+    height: 35rem;
+    object-fit: cover;
 }
 
 .heroText {

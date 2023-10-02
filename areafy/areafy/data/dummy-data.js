@@ -28,11 +28,16 @@ export const POIFILTERS = [
 ];
 
 export const PLACES = [
-    new Place('place1', 'Colliers Wood', 5),
-    new Place('place2', 'Croydon', 4),
-    new Place('place3', 'Wallington', 3)
+    new Place('place1', 'Colliers Wood', 5, ['place1review1', 'place1review2', 'place1review3']),
+    new Place('place2', 'Croydon', 4, ['place2review1', 'place2review2', 'place2review3']),
+    new Place('place3', 'Wallington', 3, [
+        new Review('place3review1', 'user1', 'catherine_blanchfield', 'place3', 
+        'place3review2', 
+        'place3review3'])
 ];
 
 export const REVIEWS = [
     new Review('review1', 'user1', 'catherine_blanchfield', 'place1', 5, 'This place is the bomb.')
 ];
+
+// placeid, place, [{reviewid, userid, username, rating, review_desc}]

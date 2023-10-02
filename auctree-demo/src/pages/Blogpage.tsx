@@ -9,10 +9,8 @@ const Blogpage = () => {
         <>
           <Header />
           <Hero />
-        <Container>
           <CardList />
           <Footer />
-      </Container>
       </>
     )
 }

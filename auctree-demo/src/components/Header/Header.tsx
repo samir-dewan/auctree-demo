@@ -5,9 +5,9 @@ import AuctreeLogo from "../../images/Auctree-Logo.png";
 const Header = () => {
   return (
     <>
-        <AppBar position="relative">
-            <Avatar alt="Auctree Logo" src={AuctreeLogo} />
-            <SavedSearchIcon />
+        <AppBar position="fixed" sx={{backgroundColor: "transparent", boxShadow: "none"}}>
+            <Avatar alt="Auctree Logo" src={AuctreeLogo}/>
+            <SavedSearchIcon/>
         </AppBar>
     </>
   );
